@@ -14,7 +14,7 @@ img = []
 def blankcallback(position):
     global thickness
     thickness = position
-    print('滚动条当前位置为%d' % position)
+    print('value %d' % position)
 
 def reversecallback(position):
     global reverse
@@ -79,5 +79,10 @@ def editImage(img_in):
         cv2.imshow('EditImage', img)
         key = cv2.waitKey(10) & 0xFFF
         if key == 27 or finished:
+            finished = False
+            reverse = 0
+            res = img
+            img = []
             break
-    return img
+    cv2.destroyAllWindows()
+    return res

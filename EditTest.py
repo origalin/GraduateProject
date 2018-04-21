@@ -3,7 +3,7 @@ import numpy as np
 
 
 def blankcallback(position):
-    print('滚动条当前位置为%d' % position)
+    print('value %d' % position)
 
 # 当鼠标按下时设置 要进行绘画
 drawing = False
